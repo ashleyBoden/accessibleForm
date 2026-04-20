@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Accessible Form</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <form>
+
+        <div class="form-group">
+            <label for="full-name" class="form-label">Full Name</label>
+            <input type="text" id="full-name" name="full-name" class="form-input" placeholder="Full Name" required aria-required="true">
+        </div>
+
+        <div class="form-group">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" id="email" name="email" class="form-input" placeholder="Email Address" required aria-required="true">
+        </div>
+
+        <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" name="password" class="form-input" placeholder="Password" required aria-required="true">
+            <button type="button" id="show-password" class="toggle-password" onclick="togglePassword()"></button>
+        </div>
+
+        <div class="form-group">
+            <label for="confirm-password" class="form-label">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" class="form-input" placeholder="Confirm Password" required aria-required="true">
+            <button type="button" id="show-confirm-password" class="toggle-password" onclick="toggleConfirmPassword();"></button>
+        </div>
+
+        <p id="password-error" class="error-message" aria-live="assertive" hidden>Passwords do not match.</p>
+
+        <button type="submit" class="form-button" onclick="return validatePassword();">Update Profile</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
